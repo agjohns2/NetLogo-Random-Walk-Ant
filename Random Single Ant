@@ -1,0 +1,24 @@
+to setup
+  clear-all
+  reset-ticks
+  create-turtles 1
+  ask turtles 
+  [
+    set shape "bug"
+    set size 4
+    set color orange 
+  ]
+end
+
+to go 
+  ask turtles 
+  [
+    ifelse coin-flip? [right random 60] [left random 60] ; if coin flip is true, turn right. false, left
+    forward random 3
+  ]
+  tick
+end 
+
+to-report coin-flip?    ;returns true or false at random
+  report random 2 = 0
+end
